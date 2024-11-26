@@ -4,16 +4,215 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Website</title>
+    <title>Temperature Plots </title>
     <link rel="stylesheet" href="./style.css">
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <style>
+      /* CSS for 3x2 grid layout */
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 columns */
+        gap: 1px; /* Space between grid items */
+        padding: 0px; /* Padding around the grid */
+      }
+
+      .grid-item {
+        text-align: center; /* Center-align content */
+      }
+
+      img {
+        width: 100%; /* Make images responsive */
+        height: 70%; /* Maintain aspect ratio */
+        border: 1px solid #ccc; /* Optional: Add a border around images */
+        border-radius: 2px; /* Optional: Add rounded corners */
+      }
+    </style>
   </head>
   <body>
     <main>
-        <h1>Welcome to My Website</h1>
-        <!-- Adding the iframe -->
-        <iframe src="./Uoi_Temp_raw_plot.html" width="100%" height="500px" style="border:none;"></iframe>
+      <h2>Temperature Plots raw data</h2>
+      <div class="grid-container">
+        <div class="grid-item">
+          <img src="./raw_data/Uoi_Temp_raw_plot.png" alt="Uoi Temperature Plot"> Nan points = 2547 or 3.07%
+        </div>
+        <div class="grid-item">
+          <img src="./raw_data/Big_Temp_raw_plot.png" alt="Big Temperature Plot"> Nan points = 823 or 0.99%
+        </div>
+        <div class="grid-item">
+          <img src="./raw_data/Ag_Temp_raw_plot.png" alt="Ag Temperature Plot"> Nan points = 30 or 0.03%
+        </div>
+        <div class="grid-item">
+          <img src="./raw_data/Neo_Temp_raw_plot.png" alt="Neo Temperature Plot"> Nan points = 8664 or 10.44%
+        </div>
+        <div class="grid-item">
+          <img src="./raw_data/Kom_Temp_raw_plot.png" alt="Kom Temperature Plot"> Nan points = 866 or 1.04%
+        </div>
+        <div class="grid-item">
+          <img src="./raw_data/Kam_Temp_raw_plot.png" alt="Kam Temperature Plot"> Nan points = 2547 or 3.07%
+        </div>
+      </div>
+
+
+      <br><br>
+
+
+      <h2>Gross test errors</h2>
+      <div class="grid-container">
+        <div class="grid-item">
+          <img src="./gross_test/Uoi_GrossTest_plot.png" alt="Uoi Temperature Plot"> 0 erros or 0%
+        </div>
+        <div class="grid-item">
+          <img src="./gross_test/Big_GrossTest_plot.png" alt="Big Temperature Plot"> 0 erros or 0%
+        </div>
+        <div class="grid-item">
+          <img src="./gross_test/Ag_GrossTest_plot.png" alt="Ag Temperature Plot"> 19 erros or 0.02%
+        </div>
+        <div class="grid-item">
+          <img src="./gross_test/Neo_GrossTest_plot.png" alt="Neo Temperature Plot"> 2547 erros or 3.06%
+        </div>
+        <div class="grid-item">
+          <img src="./gross_test/Kom_GrossTest_plot.png" alt="Kom Temperature Plot"> 0 erros or 0%
+        </div>
+        <div class="grid-item">
+          <img src="./gross_test/Kam_GrossTest_plot.png" alt="Kam Temperature Plot"> 0 erros or 0%
+        </div>
+      </div>
+
+
+      <br><br>
+
+
+      <h2> STEP TEST Tair< 10 </h2>
+      <h5> -This test is sensitive to NaN and compute the as Erroneous (not shown at plot).<br>
+           -Also this method compute as Erroneous first and last point.
+      </h5>
+
+      <div class="grid-container">
+        <div class="grid-item">
+          <img src="./STEP_TEST_10/Uoi_StepTest10_plot.png" alt="Uoi Temperature Plot"> 20 erros or 0.025%
+        </div>
+        <div class="grid-item">
+          <img src="./STEP_TEST_10/Big_StepTest10_plot.png" alt="Big Temperature Plot"> 6 erros or 0.007%
+        </div>
+        <div class="grid-item">
+          <img src="./STEP_TEST_10/Ag_StepTest10_plot.png" alt="Ag Temperature Plot"> 54 erros or 0.065%
+        </div>
+        <div class="grid-item">
+          <img src="./STEP_TEST_10/Neo_StepTest10_plot.png" alt="Neo Temperature Plot"> 51 erros or 0.061%
+        </div>
+        <div class="grid-item">
+          <img src="./STEP_TEST_10/Kom_StepTest10_plot.png" alt="Kom Temperature Plot"> 16 erros or 0.018%
+        </div>
+        <div class="grid-item">
+          <img src="./STEP_TEST_10/Kam_StepTest10_plot.png" alt="Kam Temperature Plot"> 16 erros or 0.018%
+        </div>
+      </div>
+
+
+
+      <h2> STEP TEST Tair< 4 </h2>
+      <h5> -This test is sensitive to NaN and compute the as Erroneous (not shown at plot).<br>
+
+      </h5>
+
+      <div class="grid-container">
+        <div class="grid-item">
+          <img src="./STEP_TEST_4/Uoi_StepTest4_plot.png" alt="Uoi Temperature Plot"> 2387 suspects or 2.88%
+        </div>
+        <div class="grid-item">
+          <img src="./STEP_TEST_4/Big_StepTest4_plot.png" alt="Big Temperature Plot"> 1722 suspects or 2.08%
+        </div>
+        <div class="grid-item">
+          <img src="./STEP_TEST_4/Ag_StepTest4_plot.png" alt="Ag Temperature Plot"> 3049 suspects or 3.7%
+        </div>
+        <div class="grid-item">
+          <img src="./STEP_TEST_4/Neo_StepTest4_plot.png" alt="Neo Temperature Plot"> 2870 suspects or 3.45%
+        </div>
+        <div class="grid-item">
+          <img src="./STEP_TEST_4/Kom_StepTest4_plot.png" alt="Kom Temperature Plot"> 4766 suspects or 5.44%
+        </div>
+        <div class="grid-item">
+          <img src="./STEP_TEST_4/Kam_StepTest4_plot.png" alt="Kam Temperature Plot"> 3073 suspects or 3.69%
+        </div>
+      </div>
+
+
+
+      <h2> Persistence TEST  </h2>
+
+      <div class="grid-container">
+        <div class="grid-item">
+          <img src="./persistence/Uoi_Persistence_plot.png" alt="Uoi Temperature Plot"> 35 suspects or 0.042%
+        </div>
+        <div class="grid-item">
+          <img src="./persistence/Big_Persistence_plot.png" alt="Big Temperature Plot"> 30 suspects or 0.036%
+        </div>
+        <div class="grid-item">
+          <img src="./persistence/Ag_Persistence_plot.png" alt="Ag Temperature Plot"> 30 suspects or 0.036%
+        </div>
+        <div class="grid-item">
+          <img src="./persistence/Neo_Persistence_plot.png" alt="Neo Temperature Plot"> 29 suspects or 0.036%
+        </div>
+        <div class="grid-item">
+          <img src="./persistence/Kom_Persistence_plot.png" alt="Kom Temperature Plot"> 43 suspects or 0.052%
+        </div>
+        <div class="grid-item">
+          <img src="./persistence/Kam_Persistence_plot.png" alt="Kam Temperature Plot"> 28 suspects or 0.034%
+        </div>
+      </div>
+
+
+      <h2> Internal Consistency TEST  Tair>Dew Point </h2>
+      <h5> -This test is sensitive to Temp and RH NaN and compute them as Suspects (not shown at plot).<br>
+
+      </h5>
+      <div class="grid-container">
+        <div class="grid-item">
+          <img src="./persistenceRH/Uoi_Int_Consistency_RH_plot.png" alt="Uoi Temperature Plot"> 0 suspects or 0%
+        </div>
+        <div class="grid-item">
+          <img src="./persistenceRH/Big_Int_Consistency_RH_plot.png" alt="Big Temperature Plot"> 0 suspects or 0%
+        </div>
+        <div class="grid-item">
+          <img src="./persistenceRH/Ag_Int_Consistency_RH_plot.png" alt="Ag Temperature Plot"> 4 suspects or 0.005%
+        </div>
+        <div class="grid-item">
+          <img src="./persistenceRH/Neo_Int_Consistency_RH_plot.png" alt="Neo Temperature Plot"> 0 suspects or 0%
+        </div>
+        <div class="grid-item">
+          <img src="./persistenceRH/Kom_Int_Consistency_RH_plot.png" alt="Kom Temperature Plot"> 0 suspects or 0%
+        </div>
+        <div class="grid-item">
+          <img src="./persistenceRH/Kam_Int_Consistency_RH_plot.png" alt="Kam Temperature Plot"> 0 suspects or 0%
+        </div>
+      </div>
+
+
+
+      <h2> Spatial Consistency TEST  Hubbard et al. (2005) </h2>
+      <h5> -This test removes all NaN from all timeseries. Dataframe has no NaN<br>
+
+      </h5>
+      <div class="grid-container">
+        <div class="grid-item">
+          <img src="./spatial_test/Uoi_Spatial_Consistency_plot.png" alt="Uoi Temperature Plot"> 0 suspects or 0%
+        </div>
+        <div class="grid-item">
+          <img src="./spatial_test/Big_Spatial_Consistency_plot.png" alt="Big Temperature Plot"> 1013 suspects or 1.22%
+        </div>
+        <div class="grid-item">
+          <img src="./spatial_test/Ag_Spatial_Consistency_plot.png" alt="Ag Temperature Plot"> 22 suspects or 0.032%
+        </div>
+        <div class="grid-item">
+          <img src="./spatial_test/Neo_Spatial_Consistency_plot.png" alt="Neo Temperature Plot"> 11323 suspects or 13.60%
+        </div>
+        <div class="grid-item">
+          <img src="./spatial_test/Kom_Spatial_Consistency_plot.png" alt="Kom Temperature Plot"> 3095 suspects or 3.72%
+        </div>
+        <div class="grid-item">
+          <img src="./spatial_test/Kam_Spatial_Consistency_plot.png" alt="Kam Temperature Plot"> 9786 suspects or 11.8%
+        </div>
+      </div>
+
     </main>
-    <script src="index.js"></script>
   </body>
 </html>
